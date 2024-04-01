@@ -16,7 +16,7 @@ header {
 
 section {
   border: 1px solid purple;
-  height: 340px;
+  height: 240px;
 }
 
 main {
@@ -37,6 +37,34 @@ footer {
   min-height: inherit;
 }
 
+/* hero section */
+
+#hero {
+  background: url(./assets/hero_bg.png);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+#hero .container {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+#hero .title-container span {
+  display: block;
+  color: #ffffff;
+  font-weight: 700;
+}
+#hero .title-container span:first-child {
+  font-size: 40px;
+}
+#hero .title-container span:last-child {
+  font-size: 80px;
+  line-height: 80px;
+}
+
+/* product card section*/
+
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -44,9 +72,6 @@ footer {
   margin: 40px 20px;
   
 }
-
-/* Styles product card */
-
 .product-card {
   background-color: #f0f0f0;
   border-radius: 14px;
@@ -98,6 +123,17 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+  /* hero section */
+  #hero .title-container span:first-child {
+    font-size: 36px;
+  }
+  #hero .title-container span:last-child {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  /* product card section */
   .product-container {
     grid-template-columns: 1fr;
   }
