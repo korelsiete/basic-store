@@ -11,6 +11,7 @@ html {
 
 header {
   border: 1px solid red;
+  background-color: #ff3b3c; /* Ejemplo de color */
   height: 152px;
 }
 
