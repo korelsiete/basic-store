@@ -38,6 +38,80 @@ footer {
   min-height: inherit;
 }
 
+/* header section */
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+.search .form {
+  justify-self: center;
+  width: 80%;
+}
+.search .form input {
+  height: 62px;
+  border-radius: 14px;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
+.search .form input:hover {
+  outline: 2px solid #660000;
+}
+.search .form input:focus {
+  outline: 2px solid #660000;
+}
+.search .form input::placeholder {
+  font-size: 16px;
+  text-align: center;
+}
+
+.social ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+.social ul li {
+  width: 32px;
+  height: 32px;
+}
+.social ul li img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav ul li a {
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+}
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
 /* hero section */
 
 #hero {
