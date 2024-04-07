@@ -38,6 +38,13 @@ footer {
   min-height: inherit;
 }
 
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 /* header section */
 
 header .container {
@@ -116,10 +123,7 @@ footer .container {
   flex-direction: column;
   justify-content: center;
 }
-.columns-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+footer .container .columns-container {
   column-gap: 50px;
   row-gap: 20px;
   padding: 0 20px;
