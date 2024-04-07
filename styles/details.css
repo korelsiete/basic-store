@@ -22,10 +22,6 @@ header {
   height: 152px;
 }
 
-section {
-  height: 240px;
-}
-
 main {
   height: auto;
 }
@@ -113,92 +109,6 @@ header .container {
   text-decoration: underline;
 }
 
-/* hero section */
-
-#hero {
-  background: url(./assets/hero_bg.png);
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-}
-#hero .container {
-  display: flex;
-  justify-content: baseline;
-  align-items: center;
-  padding-left: 20px;
-}
-#hero .title-container span {
-  display: block;
-  color: #ffffff;
-  font-weight: 700;
-}
-#hero .title-container span:first-child {
-  font-size: 40px;
-}
-#hero .title-container span:last-child {
-  font-size: 80px;
-  line-height: 80px;
-}
-
-/* product card section*/
-
-.product-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 40px 20px;
-  
-}
-.product-card {
-  background-color: #f0f0f0;
-  border-radius: 14px;
-  width: auto;
-  overflow: hidden;
-}
-.product-info {
-  padding: 20px;
-}
-.product-title {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  word-wrap: break-word;
-  line-height: 22px;
-}
-.product-description {
-  font-size: 14px;
-  line-height: 22px;
-  color: #515151;
-  font-weight: 500;
-}
-.product-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  object-position: center center;
-}
-.product-price-block {
-  display: flex;
-  margin: 5px 0;
-  justify-content: space-between;
-  align-items: center;
-}
-.product-price-block .price {
-  font-size: 22px;
-  font-weight: 700;
-  flex: 1;
-}
-.product-price-block .discount {
-  font-size: 12px;
-  font-weight: 700;
-  color: #428f13;
-}
-.product-tax-policy {
-  font-size: 12px;
-  font-weight: 300;
-  color: #444;
-}
-
 /* footer section */
 
 footer .container {
@@ -238,23 +148,4 @@ footer .container {
 }
 
 @media (max-width: 600px) {
-
-  /* hero section */
-  #hero .title-container span:first-child {
-    font-size: 36px;
-  }
-  #hero .title-container span:last-child {
-    font-size: 60px;
-    line-height: 60px;
-  }
-
-  /* product card section */
-  .product-container {
-    grid-template-columns: 1fr;
-  }
-  .product-card {
-    width: 100%;
-    max-width: 320px;
-    margin : 0 auto;
-  }
 }
