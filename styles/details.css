@@ -116,6 +116,57 @@ header .container {
   text-decoration: underline;
 }
 
+/* main section */
+
+main .container {
+  padding: 30px 20px;
+}
+.product-image,
+.product-description,
+.product-details {
+  flex: 1;
+}
+
+.product-description .title {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+.product-description .selector fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-top: 30px;
+}
+.product-description .selector fieldset label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.product-description .selector fieldset select {
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid #dcdcdc;
+  background-color: transparent;
+  outline: none;
+}
+.product-description .info {
+  margin-top: 50px;
+}
+.product-description .info span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.product-description .info p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #666;
+  line-height: 24px;
+}
+
 /* footer section */
 
 footer .container {
