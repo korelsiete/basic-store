@@ -119,12 +119,16 @@ header .container {
 /* main section */
 
 main .container {
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
+main .columns-container {
+  justify-content: center;
+  gap: 40px;
+} 
 
 .product-section {
   width: 100%;
-  min-width: 300px;
+  min-width: 350px;
 }
 
 .product-image,
@@ -240,6 +244,24 @@ main .container {
 .product-details .add-to-cart .main-btn:hover {
   background-color: #e93737;
   transition: all 0.3s;
+}
+.product-image {
+  max-width: 550px;
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+.product-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  height: min-content;  
+}
+.product-image .main-img {
+  width: 80%;
+}
+.product-image .carrusel {
+  width: 20%;
 }
 
 /* footer section */
