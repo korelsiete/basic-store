@@ -53,15 +53,15 @@
     <main>
       <div class="container">
         <div class="columns-container">
-          <div class="product-image">
+          <div class="product-image product-section">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
             a, quibusdam odio laboriosam magni corrupti qui ab blanditiis fugit
             quis aliquid natus veritatis exercitationem corporis nemo recusandae
             saepe doloremque ex?
           </div>
-          <div class="product-description">
-            <h1 class="title">Macbook Pro 15'4</h1>
 
+          <div class="product-description product-section">
+            <h1 class="title">Macbook Pro 15'4</h1>
             <form class="selector">
               <fieldset>
                 <label class="label" for="color">Color</label>
@@ -72,7 +72,6 @@
                 </select>
               </fieldset>
             </form>
-
             <div class="info">
               <span>Descripción</span>
               <p>
@@ -83,11 +82,47 @@
               </p>
             </div>
           </div>
-          <div class="product-details">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
-            a, quibusdam odio laboriosam magni corrupti qui ab blanditiis fugit
-            quis aliquid natus veritatis exercitationem corporis nemo recusandae
-            saepe doloremque ex?
+
+          <div class="product-details product-section">
+            <div class="price">
+              <span>Total:</span>
+              <p>$750000</p>
+              <p>
+                Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$
+                50711 haciendo la solicitud en AFIP.
+              </p>
+            </div>
+            <div class="delivery">
+              <div>
+                <img src="./assets/truck.png" alt="truck-logo" />
+                <p>
+                  Agrega el producto al carrito para conocer los costos de envío
+                </p>
+              </div>
+              <div>
+                <img src="./assets/plane.png" alt="plane-logo" />
+                <p>
+                  Recibí aproximadamente entre 10 y 15 días hábiles,
+                  seleccionando envío normal
+                </p>
+              </div>
+            </div>
+            <div class="add-to-cart">
+              <form>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="99"
+                  class="count-product"
+                />
+                <input
+                  type="submit"
+                  value="Añadir al carrito"
+                  class="main-btn"
+                />
+              </form>
+            </div>
           </div>
         </div>
 
