@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda Virtual</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,13 +17,9 @@
     <header>
       <div class="container">
         <div class="search">
-          <div class="logo">
-            <img
-              src="./assets/tiendamia-logo.svg"
-              width="218"
-              alt="Logo Store"
-            />
-          </div>
+          <a class="logo" href="./index.html">
+            <img src="./assets/tiendamia-logo.svg" alt="Logo Store" />
+          </a>
 
           <div class="form">
             <form action=""><input type="text" placeholder="Search" /></form>
@@ -36,6 +32,8 @@
               <li><img src="./assets/cart.png" alt="cart logo" /></li>
             </ul>
           </div>
+
+          <img src="./assets/menu-icon.svg" alt="menu icon" id="menu-icon" />
         </div>
 
         <div class="nav">
@@ -45,6 +43,30 @@
             <li><a href="#">Costos y tarifas</a></li>
             <li><a href="#">Mis pedidos</a></li>
             <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <div class="form">
+          <form action=""><input type="text" placeholder="Search" /></form>
+        </div>
+
+        <div class="nav">
+          <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Costos y tarifas</a></li>
+            <li><a href="#">Mis pedidos</a></li>
+            <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <ul>
+            <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
+            <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
+            <li><img src="./assets/cart.png" alt="cart logo" /></li>
           </ul>
         </div>
       </div>
@@ -62,7 +84,7 @@
     <main>
       <div class="container">
         <div class="product-container">
-          <article class="product-card">
+          <a class="product-card" href="./details.html">
             <img
               src="./assets/mock1.jpg"
               alt="Macbook Pro"
@@ -79,9 +101,9 @@
                 Incluye impuesto País y percepción AFIP
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card">
+          <a class="product-card" href="./details.html">
             <img
               src="./assets/mock1.jpg"
               alt="Macbook Pro"
@@ -98,9 +120,9 @@
                 Incluye impuesto País y percepción AFIP
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card">
+          <a class="product-card" href="./details.html">
             <img
               src="./assets/mock1.jpg"
               alt="Macbook Pro"
@@ -117,9 +139,9 @@
                 Incluye impuesto País y percepción AFIP
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card">
+          <a class="product-card" href="./details.html">
             <img
               src="./assets/mock1.jpg"
               alt="Macbook Pro"
@@ -136,9 +158,9 @@
                 Incluye impuesto País y percepción AFIP
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="product-card">
+          <a class="product-card" href="./details.html">
             <img
               src="./assets/mock1.jpg"
               alt="Macbook Pro"
@@ -155,7 +177,7 @@
                 Incluye impuesto País y percepción AFIP
               </div>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </main>
@@ -207,5 +229,17 @@
         <div class="copyright">Curso de HTML + CSS 2024</div>
       </div>
     </footer>
+
+    <script>
+      const menuIcon = document.querySelector("#menu-icon");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      menuIcon.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+
+        menuIcon.src = isOpen ? "assets/close.svg" : "assets/menu-icon.svg";
+      });
+    </script>
   </body>
 </html>
