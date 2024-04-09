@@ -18,11 +18,7 @@
       <div class="container">
         <div class="search">
           <a class="logo" href="./index.html">
-            <img
-              src="./assets/tiendamia-logo.svg"
-              width="218"
-              alt="Logo Store"
-            />
+            <img src="./assets/tiendamia-logo.svg" alt="Logo Store" />
           </a>
 
           <div class="form">
@@ -36,6 +32,8 @@
               <li><img src="./assets/cart.png" alt="cart logo" /></li>
             </ul>
           </div>
+
+          <img src="./assets/menu-icon.svg" alt="menu icon" id="menu-icon" />
         </div>
 
         <div class="nav">
@@ -45,6 +43,30 @@
             <li><a href="#">Costos y tarifas</a></li>
             <li><a href="#">Mis pedidos</a></li>
             <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <div class="form">
+          <form action=""><input type="text" placeholder="Search" /></form>
+        </div>
+
+        <div class="nav">
+          <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Costos y tarifas</a></li>
+            <li><a href="#">Mis pedidos</a></li>
+            <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <ul>
+            <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
+            <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
+            <li><img src="./assets/cart.png" alt="cart logo" /></li>
           </ul>
         </div>
       </div>
@@ -207,5 +229,17 @@
         <div class="copyright">Curso de HTML + CSS 2024</div>
       </div>
     </footer>
+
+    <script>
+      const menuIcon = document.querySelector("#menu-icon");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      menuIcon.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+
+        menuIcon.src = isOpen ? "assets/close.svg" : "assets/menu-icon.svg";
+      });
+    </script>
   </body>
 </html>
