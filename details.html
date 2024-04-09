@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/details.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="search">
+          <a class="logo" href="./index.html">
+            <img
+              src="./assets/tiendamia-logo.svg"
+              width="218"
+              alt="Logo Store"
+            />
+          </a>
+
+          <div class="form">
+            <form action=""><input type="text" placeholder="Search" /></form>
+          </div>
+
+          <div class="social">
+            <ul>
+              <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
+              <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
+              <li><img src="./assets/cart.png" alt="cart logo" /></li>
+            </ul>
+          </div>
+
+          <img src="./assets/menu-icon.svg" alt="menu icon" id="menu-icon" />
+        </div>
+
+        <div class="nav">
+          <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Costos y tarifas</a></li>
+            <li><a href="#">Mis pedidos</a></li>
+            <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <div class="form">
+          <form action=""><input type="text" placeholder="Search" /></form>
+        </div>
+
+        <div class="nav">
+          <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Costos y tarifas</a></li>
+            <li><a href="#">Mis pedidos</a></li>
+            <li><a href="#">Garantía</a></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <ul>
+            <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
+            <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
+            <li><img src="./assets/cart.png" alt="cart logo" /></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="columns-container">
+          <div class="product-image product-section">
+            <div class="thumbnail-container">
+              <img src="./assets/mock1.jpg" alt="Macbook img1" />
+            </div>
+            <div class="thumbnail-container">
+              <img src="./assets/mock2.jpg" alt="Macbook img2" />
+            </div>
+            <img
+              class="main-image"
+              src="./assets/mock1.jpg"
+              alt="Macbook img1"
+            />
+          </div>
+
+          <div class="product-description product-section">
+            <h1 class="title">Macbook Pro 15'4</h1>
+            <form class="selector">
+              <fieldset>
+                <label class="label" for="color">Color</label>
+                <select type="text" placeholder="Selecciona un color">
+                  <option value="black">Negro</option>
+                  <option value="red">Rojo</option>
+                  <option value="blue">Azul</option>
+                </select>
+              </fieldset>
+            </form>
+            <div class="info">
+              <span>Descripción</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                non ratione. Ipsum, incidunt magnam perspiciatis ex omnis labore
+                corporis facere voluptatibus repellendus dignissimos ipsa,
+                placeat sit voluptate dicta exercitationem error.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-checkout product-section">
+            <div class="checkout-container">
+              <span class="checkout-total-label">Total:</span>
+              <h2 class="checkout-total-price">$750000</h2>
+              <p class="checkout-description">
+                Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$
+                50711 haciendo la solicitud en AFIP.
+              </p>
+
+              <ul class="checkout-policy-list">
+                <li>
+                  <span class="policy-icon"
+                    ><img src="./assets/truck.png" alt=""
+                  /></span>
+                  <span class="policy-desc">
+                    Agrega el producto al carrito para conocer los costos de
+                    envío</span
+                  >
+                </li>
+                <li>
+                  <span class="policy-icon"
+                    ><img src="./assets/plane.png" alt=""
+                  /></span>
+                  <span class="policy-desc">
+                    Recibí aproximadamente entre 10 y 15 días hábiles,
+                    seleccionando envío normal</span
+                  >
+                </li>
+              </ul>
+
+              <div class="checkout-process">
+                <div class="top">
+                  <input type="number" value="1" min="1" max="99" />
+                  <button class="btn-primary">Comprar</button>
+                </div>
+                <div class="bottom">
+                  <button class="btn-outline">Añadir al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sales-block">
+          <h2>Ofertas de la semana</h2>
+
+          <div class="product-container">
+            <a class="product-card" href="./details.html">
+              <img
+                src="./assets/mock1.jpg"
+                alt="Macbook Pro"
+                class="product-img"
+              />
+              <div class="product-info">
+                <span class="product-title">Macbook Pro 15'4</span>
+                <span class="product-description">Space Gray</span>
+                <div class="product-price-block">
+                  <span class="price">$750.000</span>
+                  <span class="discount">50% Off</span>
+                </div>
+                <div class="product-tax-policy">
+                  Incluye impuesto País y percepción AFIP
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card" href="./details.html">
+              <img
+                src="./assets/mock1.jpg"
+                alt="Macbook Pro"
+                class="product-img"
+              />
+              <div class="product-info">
+                <span class="product-title">Macbook Pro 15'4</span>
+                <span class="product-description">Space Gray</span>
+                <div class="product-price-block">
+                  <span class="price">$750.000</span>
+                  <span class="discount">50% Off</span>
+                </div>
+                <div class="product-tax-policy">
+                  Incluye impuesto País y percepción AFIP
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card" href="./details.html">
+              <img
+                src="./assets/mock1.jpg"
+                alt="Macbook Pro"
+                class="product-img"
+              />
+              <div class="product-info">
+                <span class="product-title">Macbook Pro 15'4</span>
+                <span class="product-description">Space Gray</span>
+                <div class="product-price-block">
+                  <span class="price">$750.000</span>
+                  <span class="discount">50% Off</span>
+                </div>
+                <div class="product-tax-policy">
+                  Incluye impuesto País y percepción AFIP
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="columns-container">
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Ofertas</a></li>
+              <li><a href="#">Laptop</a></li>
+              <li><a href="#">Audio</a></li>
+              <li><a href="#">Auriculares</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Cómo comprar</a></li>
+              <li><a href="#">Formas de pago</a></li>
+              <li><a href="#">Envíos</a></li>
+              <li><a href="#">Devoluciones</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Costos y tarifas</a></li>
+              <li><a href="#">Impuestos</a></li>
+              <li><a href="#">Facturación</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Mis pedidos</a></li>
+              <li><a href="#">Pedir nuevamente</a></li>
+              <li><a href="#">Lista de deseos</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Garantía</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">Curso de HTML + CSS 2024</div>
+      </div>
+    </footer>
+
+    <script>
+      const menuIcon = document.querySelector("#menu-icon");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      menuIcon.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+
+        menuIcon.src = isOpen ? "assets/close.svg" : "assets/menu-icon.svg";
+      });
+    </script>
+  </body>
+</html>
