@@ -31,7 +31,7 @@ main {
 }
 
 footer {
-  background-color: #7525A7;
+  background-color: #7525a7;
   min-height: 368px;
 }
 
@@ -189,7 +189,8 @@ header .container {
 .product-card {
   background-color: #f0f0f0;
   border-radius: 14px;
-  width: auto;
+  width: 100%;
+  max-width: 320px;
   overflow: hidden;
   color: black;
   cursor: pointer;
@@ -277,7 +278,6 @@ footer .container {
 }
 
 @media (max-width: 600px) {
-
   /* product card section */
   .product-container {
     grid-template-columns: 1fr;
@@ -285,12 +285,11 @@ footer .container {
   .product-card {
     width: 100%;
     max-width: 320px;
-    margin : 0 auto;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 900px) {
-
   /* header section */
 
   header {
@@ -306,7 +305,7 @@ footer .container {
   .container .form,
   .container .social {
     display: none;
-  } 
+  }
 
   /* dropdown-menu */
 

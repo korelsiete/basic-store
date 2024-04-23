@@ -50,7 +50,7 @@ const producto1 = new Product(
 );
 const producto2 = new Product(
   2,
-  "MacBook Pro 15'4",
+  "Iphone 10",
   750000,
   10,
   ["./assets/mock1.jpg", "./assets/mock2.jpg"],
@@ -61,7 +61,7 @@ const producto2 = new Product(
 );
 const producto3 = new Product(
   3,
-  "MacBook Pro 15'4",
+  "AirPods",
   750000,
   10,
   ["./assets/mock1.jpg", "./assets/mock2.jpg"],
@@ -72,7 +72,7 @@ const producto3 = new Product(
 );
 const producto4 = new Product(
   1,
-  "MacBook Pro 15'4",
+  "Smart Watch",
   750000,
   10,
   ["./assets/mock1.jpg", "./assets/mock2.jpg"],
@@ -83,7 +83,7 @@ const producto4 = new Product(
 );
 const producto5 = new Product(
   1,
-  "MacBook Pro 15'4",
+  "Tablet 10'4",
   750000,
   10,
   ["./assets/mock1.jpg", "./assets/mock2.jpg"],
@@ -94,7 +94,7 @@ const producto5 = new Product(
 );
 const producto6 = new Product(
   6,
-  "MacBook Pro 15'4",
+  "USB port for Mac",
   750000,
   10,
   ["./assets/mock1.jpg", "./assets/mock2.jpg"],
@@ -150,3 +150,5 @@ function printCards(arrayProducts, selector) {
 }
 
 printCards(products, "products");
+
+export { products, printCards };

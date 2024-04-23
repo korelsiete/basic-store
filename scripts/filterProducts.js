@@ -1,13 +1,17 @@
+import { products, printCards } from "./products.js";
+
 const mainSearch = document.querySelector(".container #search");
 const dropdownSearch = document.querySelector(".dropdown-menu #search");
 
-function captureText(event) {
-  console.log(event);
-  console.log(event.target);
-  console.log(event.key);
-  console.log(event.target.value);
+function captureEvent(event) {
+  const searchValue = event.target.value.toLowerCase().trim();
+  const filteredProducts = products.filter((product) => {
+    return product.title.toLowerCase().includes(searchValue);
+  });
+
+  printCards(filteredProducts, "products");
 }
 
 for (const search of [mainSearch, dropdownSearch]) {
-  search.addEventListener("keyup", (event) => captureText(event));
+  search.addEventListener("keyup", (event) => captureEvent(event));
 }
