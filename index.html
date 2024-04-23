@@ -13,6 +13,7 @@
     />
     <script defer src="./scripts/layout.js"></script>
     <script defer src="./scripts/products.js"></script>
+    <script defer src="./scripts/filterProducts.js"></script>
   </head>
 
   <body>
@@ -24,7 +25,9 @@
           </a>
 
           <div class="form">
-            <form action=""><input type="text" placeholder="Search" /></form>
+            <form action="">
+              <input type="text" placeholder="Search" onkeyup="captureText()" />
+            </form>
           </div>
 
           <div class="social">
@@ -45,7 +48,9 @@
 
       <div class="dropdown-menu">
         <div class="form">
-          <form action=""><input type="text" placeholder="Search" /></form>
+          <form action="">
+            <input type="text" placeholder="Search" onkeyup="captureText()" />
+          </form>
         </div>
 
         <div class="nav">
