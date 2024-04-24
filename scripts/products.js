@@ -7,7 +7,7 @@ class Product {
     images,
     onSale,
     supplier,
-    colors = [],
+    colors,
     description
   ) {
     this.id = id;
@@ -43,7 +43,10 @@ const products = [
     "MacBook Pro 15'4",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product 2", url: "./assets/mock2.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -54,7 +57,10 @@ const products = [
     "Iphone 10",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product", url: "./assets/mock1.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -65,7 +71,10 @@ const products = [
     "AirPods",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product", url: "./assets/mock1.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -76,7 +85,10 @@ const products = [
     "Smart Watch",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product", url: "./assets/mock1.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -87,7 +99,10 @@ const products = [
     "Tablet 10'4",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product", url: "./assets/mock1.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -98,7 +113,10 @@ const products = [
     "USB port for Mac",
     750000,
     10,
-    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    [
+      { alt: "image product", url: "./assets/mock1.jpg" },
+      { alt: "image product", url: "./assets/mock1.jpg" },
+    ],
     true,
     "Apple",
     ["Space Gray", "Silver"],
@@ -107,18 +125,19 @@ const products = [
 ];
 
 function createCard(product) {
-  return `<a class="product-card" href="./details.html">
+  const { id, title, price, images, onSale, description } = product;
+  return `<a class="product-card" href="./details.html?id=${id}">
   <img
-    src="${product.images[0]}"
-    alt="${product.title}"
+    src="${images[0].url}"
+    alt="${images[0].alt}"
     class="product-img"
   />
   <div class="product-info">
-    <span class="product-title">${product.title}</span>
-    <span class="product-description">${product.description}</span>
+    <span class="product-title">${title}</span>
+    <span class="product-description">${description}</span>
     <div class="product-price-block">
-      <span class="price">$${product.price}</span>
-      <span class="discount">${product.onSale ? "50% Off" : ""}</span>
+      <span class="price">$${price}</span>
+      <span class="discount">${onSale ? "50% Off" : ""}</span>
     </div>
     <div class="product-tax-policy">
       Incluye impuesto País y percepción AFIP
@@ -127,19 +146,15 @@ function createCard(product) {
 </a>`;
 }
 
-function printCards(arrayProducts, selector) {
-  try {
-    let templateProducts = "";
+function printCards(selector, arrayProducts) {
+  let templateProducts = "";
 
-    arrayProducts.forEach((product) => {
-      templateProducts = templateProducts + createCard(product);
-    });
+  arrayProducts.forEach((product) => {
+    templateProducts = templateProducts + createCard(product);
+  });
 
-    const productContainer = document.getElementById(selector);
-    productContainer.innerHTML = templateProducts;
-  } catch (error) {
-    console.error(error);
-  }
+  const productContainer = document.getElementById(selector);
+  if (productContainer) productContainer.innerHTML = templateProducts;
 }
 
 export { products, printCards };

@@ -2,6 +2,7 @@
 import { products, printCards } from "./scripts/products.js";
 import { renderNavOptions, renderFooterOptions } from "./scripts/layout.js";
 import { filterProducts } from "./scripts/filterProducts.js";
+import { printDetails } from "./scripts/printDetails.js";
 
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
@@ -18,7 +19,8 @@ import { filterProducts } from "./scripts/filterProducts.js";
       });
     }
 
-    printCards(products, "products");
+    printCards("products", products);
+    printDetails("details", products);
     renderNavOptions(navMain);
     renderNavOptions(navDropdown);
     renderFooterOptions(footer);
