@@ -37,85 +37,74 @@ class Product {
   }
 }
 
-const producto1 = new Product(
-  1,
-  "MacBook Pro 15'4",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto2 = new Product(
-  2,
-  "Iphone 10",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto3 = new Product(
-  3,
-  "AirPods",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto4 = new Product(
-  1,
-  "Smart Watch",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto5 = new Product(
-  1,
-  "Tablet 10'4",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto6 = new Product(
-  6,
-  "USB port for Mac",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-const producto7 = new Product(
-  7,
-  "MacBook Pro 15'4",
-  750000,
-  10,
-  ["./assets/mock1.jpg", "./assets/mock2.jpg"],
-  true,
-  "Apple",
-  ["Space Gray", "Silver"],
-  "Space gray"
-);
-
-const products = [producto1, producto2, producto3, producto4, producto5];
+const products = [
+  new Product(
+    1,
+    "MacBook Pro 15'4",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+  new Product(
+    2,
+    "Iphone 10",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+  new Product(
+    3,
+    "AirPods",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+  new Product(
+    4,
+    "Smart Watch",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+  new Product(
+    5,
+    "Tablet 10'4",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+  new Product(
+    6,
+    "USB port for Mac",
+    750000,
+    10,
+    ["./assets/mock1.jpg", "./assets/mock2.jpg"],
+    true,
+    "Apple",
+    ["Space Gray", "Silver"],
+    "Space gray"
+  ),
+];
 
 function createCard(product) {
   return `<a class="product-card" href="./details.html">
@@ -139,16 +128,18 @@ function createCard(product) {
 }
 
 function printCards(arrayProducts, selector) {
-  let templateProducts = "";
+  try {
+    let templateProducts = "";
 
-  arrayProducts.forEach((product) => {
-    templateProducts = templateProducts + createCard(product);
-  });
+    arrayProducts.forEach((product) => {
+      templateProducts = templateProducts + createCard(product);
+    });
 
-  const productContainer = document.getElementById(selector);
-  productContainer.innerHTML = templateProducts;
+    const productContainer = document.getElementById(selector);
+    productContainer.innerHTML = templateProducts;
+  } catch (error) {
+    console.error(error);
+  }
 }
-
-printCards(products, "products");
 
 export { products, printCards };
