@@ -15,7 +15,7 @@ import { printDetails } from "./scripts/printDetails.js";
     for (const search of [searchMain, searchDropdown]) {
       search.addEventListener("keyup", (event) => {
         const filteredProducts = filterProducts(event, products);
-        printCards(filteredProducts, "products");
+        printCards("products", filteredProducts);
       });
     }
 

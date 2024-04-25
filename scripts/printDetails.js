@@ -8,14 +8,14 @@ function createProductDetails(product) {
             ${images
               .map((image) => {
                 return `<div class="thumbnail-container">
-              <img src="${image.url}" alt="${image.alt}" />
+              <img src=${image.url} alt=${image.alt} />
             </div>`;
               })
               .join("")}
             <img
               class="main-image"
-              src="${images[0].url}"
-              alt="${images[0].alt}"
+              src=${images[0].url}
+              alt=${images[0].alt}
             />
           </div>
 

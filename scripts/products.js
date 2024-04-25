@@ -46,10 +46,12 @@ const products = [
     [
       { alt: "image product", url: "./assets/mock1.jpg" },
       { alt: "image product 2", url: "./assets/mock2.jpg" },
+      { alt: "image product 3", url: "./assets/mock1.jpg" },
+      { alt: "image product 4", url: "./assets/mock2.jpg" },
     ],
     true,
     "Apple",
-    ["Space Gray", "Silver"],
+    ["Space Gray", "Silver", "Green", "Orange"],
     "Space gray"
   ),
   new Product(
