@@ -5,5 +5,3 @@ function filterProducts(event, products = []) {
   });
   return filteredProducts;
 }
-
-export { filterProducts };

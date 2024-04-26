@@ -76,5 +76,3 @@ function renderFooterOptions(container) {
     container.append(div);
   }
 }
-
-export { renderNavOptions, renderFooterOptions };

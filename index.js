@@ -1,9 +1,4 @@
 "use strict";
-import { products, printCards } from "./scripts/products.js";
-import { renderNavOptions, renderFooterOptions } from "./scripts/layout.js";
-import { filterProducts } from "./scripts/filterProducts.js";
-import { printDetails } from "./scripts/printDetails.js";
-
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
     const searchMain = document.getElementById("main-search");

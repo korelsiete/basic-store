@@ -2,13 +2,26 @@ const query = location.search;
 const params = new URLSearchParams(query);
 const idQuery = params.get("id");
 
+function changeImage(e) {
+  const selectedSrc = e.target.src;
+  const mainImage = document.querySelector(".main-image");
+  mainImage.src = selectedSrc;
+}
+
+function changeSubtotal(e, price) {
+  const quantity = e.target.value;
+  const total = quantity * price;
+  const totalPrice = document.querySelector(".checkout-total-price");
+  totalPrice.innerText = `$${total}`;
+}
+
 function createProductDetails(product) {
   const { title, description, price, images, colors } = product;
   return `<div class="product-image product-section">
             ${images
               .map((image) => {
                 return `<div class="thumbnail-container">
-              <img src=${image.url} alt=${image.alt} />
+              <img src=${image.url} alt=${image.alt} onClick="changeImage(event)"/>
             </div>`;
               })
               .join("")}
@@ -74,7 +87,7 @@ function createProductDetails(product) {
 
               <div class="checkout-process">
                 <div class="top">
-                  <input type="number" value="1" min="1" max="99" />
+                  <input type="number" value="1" min="1" max="99" onchange="changeSubtotal(event, ${price})"/>
                   <button class="btn-primary">Comprar</button>
                 </div>
                 <div class="bottom">
@@ -88,9 +101,9 @@ function createProductDetails(product) {
 
 function printDetails(selector, products, id = idQuery) {
   const product = products.find((product) => product.id == id);
+  if (!product) return;
 
   const container = document.getElementById(selector);
-  if (container) container.innerHTML = createProductDetails(product);
+  const productDetailHTML = createProductDetails(product);
+  container.innerHTML = productDetailHTML;
 }
-
-export { printDetails };
