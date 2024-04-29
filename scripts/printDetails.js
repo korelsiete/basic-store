@@ -15,8 +15,37 @@ function changeSubtotal(e, price) {
   totalPrice.innerText = `$${total}`;
 }
 
+function saveProduct(id) {
+  const { title, price, images } = products.find(
+    (product) => product.id === id
+  );
+  const colorValue = document.querySelector("#color-" + id).value;
+  const quantityValue = Number(document.querySelector("#quantity-" + id).value);
+  const productValues = {
+    id,
+    title,
+    price,
+    image: images[0].url,
+    color: { [colorValue]: quantityValue },
+    quantity: quantityValue,
+  };
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.some((product) => product.id === id)) {
+    const sameProduct = cart.find((product) => product.id === id);
+    sameProduct.color[colorValue]
+      ? (sameProduct.color[colorValue] += quantityValue)
+      : (sameProduct.color[colorValue] = quantityValue);
+
+    sameProduct.quantity += productValues.quantity;
+  } else {
+    cart.push(productValues);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 function createProductDetails(product) {
-  const { title, description, price, images, colors } = product;
+  const { title, description, price, images, colors, id } = product;
   return `<div class="product-image product-section">
             ${images
               .map((image) => {
@@ -37,7 +66,7 @@ function createProductDetails(product) {
             <form class="selector">
               <fieldset>
                 <label class="label" for="color">Color</label>
-                <select type="text" placeholder="Selecciona un color">
+                <select id="color-${id}" type="text" placeholder="Selecciona un color">
                   ${colors
                     .map((color) => {
                       return `<option value=${color
@@ -87,11 +116,11 @@ function createProductDetails(product) {
 
               <div class="checkout-process">
                 <div class="top">
-                  <input type="number" value="1" min="1" max="99" onchange="changeSubtotal(event, ${price})"/>
+                  <input id="quantity-${id}" type="number" value="1" min="1" max="99" onchange="changeSubtotal(event, ${price})"/>
                   <button class="btn-primary">Comprar</button>
                 </div>
-                <div class="bottom">
-                  <button class="btn-outline">Añadir al carrito</button>
+                  <div class="bottom" onclick="saveProduct(${id})">
+                    <button class="btn-outline">Añadir al carrito</button>
                 </div>
               </div>
             </div>
