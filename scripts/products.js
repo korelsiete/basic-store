@@ -156,5 +156,5 @@ function printCards(selector, arrayProducts) {
   });
 
   const productContainer = document.getElementById(selector);
-  if (productContainer) productContainer.innerHTML = templateProducts;
+  productContainer.innerHTML = templateProducts;
 }

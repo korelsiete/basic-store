@@ -14,7 +14,6 @@
     <script src="./scripts/layout.js"></script>
     <script src="./scripts/products.js"></script>
     <script src="./scripts/filterProducts.js"></script>
-    <script src="./scripts/printDetails.js"></script>
     <script defer src="./index.js"></script>
   </head>
 
@@ -27,17 +26,26 @@
           </a>
 
           <div class="form">
-            <form action="">
+            <form onsubmit="event.preventDefault();">
               <input type="text" placeholder="Search" id="main-search" />
             </form>
           </div>
 
           <div class="social">
             <ul>
-              <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
-              <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
-              <li><img src="./assets/cart.png" alt="cart logo" /></li>
-            </ul>
+              <ul>
+                <li>
+                  <a><img src="./assets/facebook.png" alt="facebook logo" /></a>
+                </li>
+                <li>
+                  <a><img src="./assets/instagram.png" alt="instagram logo" /></a>
+                </li>
+                <li>
+                  <a href="cart.html"
+                    ><img src="./assets/cart.png" alt="cart logo"
+                  /></a>
+                </li>
+              </ul>
           </div>
 
           <img src="./assets/menu-icon.svg" alt="menu icon" id="menu-icon" />
@@ -50,7 +58,7 @@
 
       <div class="dropdown-menu">
         <div class="form">
-          <form action="">
+          <form onsubmit="event.preventDefault();">
             <input type="text" placeholder="Search" id="dropdown-search" />
           </form>
         </div>
@@ -61,9 +69,19 @@
 
         <div class="social">
           <ul>
-            <li><img src="./assets/facebook.png" alt="facebook logo" /></li>
-            <li><img src="./assets/instagram.png" alt="instagram logo" /></li>
-            <li><img src="./assets/cart.png" alt="cart logo" /></li>
+            <ul>
+              <li>
+                <a><img src="./assets/facebook.png" alt="facebook logo" /></a>
+              </li>
+              <li>
+                <a><img src="./assets/instagram.png" alt="instagram logo" /></a>
+              </li>
+              <li>
+                <a href="cart.html"
+                  ><img src="./assets/cart.png" alt="cart logo"
+                /></a>
+              </li>
+            </ul>
           </ul>
         </div>
       </div>

@@ -24,6 +24,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 main {
@@ -40,6 +41,45 @@ footer {
   margin: 0 auto;
   height: inherit;
   min-height: inherit;
+}
+
+/* buttons */
+
+.btn-primary {
+  width: 100%;
+  background: #ff3b3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transition: all 0.3s ease;
+  background-color: #e53434;
+}
+.btn-primary:active {
+  background-color: #fa3636;
+}
+.btn-outline {
+  width: 100%;
+  border: 1px solid #ff3b3c;
+  color: #ff3b3c;
+  font-weight: bold;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  transition: all 0.3s ease;
+  background-color: #ff3b3c;
+  color: white;
+}
+.btn-outline:active {
+  background-color: #ec3838;
 }
 
 /* header section */

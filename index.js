@@ -7,17 +7,27 @@
     const navDropdown = document.getElementById("dropdown-nav");
     const footer = document.getElementById("footer");
 
-    for (const search of [searchMain, searchDropdown]) {
-      search.addEventListener("keyup", (event) => {
-        const filteredProducts = filterProducts(event, products);
-        printCards("products", filteredProducts);
-      });
-    }
-
-    printCards("products", products);
-    printDetails("details", products);
     renderNavOptions(navMain);
     renderNavOptions(navDropdown);
     renderFooterOptions(footer);
+
+    const currentPage = window.location.pathname;
+    switch (currentPage) {
+      case "/":
+        for (const search of [searchMain, searchDropdown]) {
+          search.addEventListener("keyup", (event) => {
+            const filteredProducts = filterProducts(event, products);
+            printCards("products", filteredProducts);
+          });
+        }
+        printCards("products", products);
+        break;
+      case "/details.html":
+        printDetails("details", products);
+        break;
+      case "/cart.html":
+        printCartProducts("cart-container");
+        break;
+    }
   });
 })();

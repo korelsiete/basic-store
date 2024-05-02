@@ -16,7 +16,7 @@ function changeSubtotal(e, price) {
 }
 
 function saveProduct(id) {
-  const { title, price, images } = products.find(
+  const { title, price, images, description } = products.find(
     (product) => product.id === id
   );
   const colorValue = document.querySelector("#color-" + id).value;
@@ -25,6 +25,7 @@ function saveProduct(id) {
     id,
     title,
     price,
+    description,
     image: images[0].url,
     color: { [colorValue]: quantityValue },
     quantity: quantityValue,
@@ -130,7 +131,6 @@ function createProductDetails(product) {
 
 function printDetails(selector, products, id = idQuery) {
   const product = products.find((product) => product.id == id);
-  if (!product) return;
 
   const container = document.getElementById(selector);
   const productDetailHTML = createProductDetails(product);

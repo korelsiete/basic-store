@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda Virtual</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/details.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,8 +13,7 @@
       rel="stylesheet"
     />
     <script src="./scripts/layout.js"></script>
-    <script src="./scripts/products.js"></script>
-    <script src="./scripts/printDetails.js"></script>
+    <script src="./scripts/cart.js"></script>
     <script defer src="./index.js"></script>
   </head>
 
@@ -23,11 +22,7 @@
       <div class="container">
         <div class="search">
           <a class="logo" href="/">
-            <img
-              src="./assets/tiendamia-logo.svg"
-              width="218"
-              alt="Logo Store"
-            />
+            <img src="./assets/tiendamia-logo.svg" alt="Logo Store" />
           </a>
 
           <div class="form">
@@ -38,17 +33,21 @@
 
           <div class="social">
             <ul>
-              <li>
-                <a><img src="./assets/facebook.png" alt="facebook logo" /></a>
-              </li>
-              <li>
-                <a><img src="./assets/instagram.png" alt="instagram logo" /></a>
-              </li>
-              <li>
-                <a href="cart.html"
-                  ><img src="./assets/cart.png" alt="cart logo"
-                /></a>
-              </li>
+              <ul>
+                <li>
+                  <a><img src="./assets/facebook.png" alt="facebook logo" /></a>
+                </li>
+                <li>
+                  <a
+                    ><img src="./assets/instagram.png" alt="instagram logo"
+                  /></a>
+                </li>
+                <li>
+                  <a href="cart.html"
+                    ><img src="./assets/cart.png" alt="cart logo"
+                  /></a>
+                </li>
+              </ul>
             </ul>
           </div>
 
@@ -93,20 +92,14 @@
 
     <main>
       <div class="container">
-        <div id="details" class="columns-container"></div>
-
-        <div class="sales-block">
-          <h2>Ofertas de la semana</h2>
-
-          <div class="product-container"></div>
-        </div>
+        <h1>Carrito de Compras</h1>
+        <div class="cart-container" id="cart-container"></div>
       </div>
     </main>
 
     <footer>
       <div class="container">
         <div id="footer" class="columns-container"></div>
-
         <div class="copyright">Curso de HTML + CSS 2024</div>
       </div>
     </footer>
