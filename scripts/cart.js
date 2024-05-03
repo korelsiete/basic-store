@@ -45,6 +45,11 @@ function createCard(productCart) {
 </article>`;
 }
 
+function clearCart() {
+  localStorage.removeItem("cart");
+  printCartProducts("cart-container");
+}
+
 function totalToPay(cart) {
   const total = cart.reduce(
     (acc, product) => (acc += product.price * product.quantity),
@@ -57,13 +62,16 @@ function totalToPay(cart) {
     <span>${total}</span>
   </p>
   <span class="quote">Incluye Impuesto PAIS y percepción AFIP.</span>
-  <button class="btn-primary">Finaliza tu compra</button>
+  <button class="btn-primary" onclick="clearCart()">Finaliza tu compra</button>
 </article>`;
 }
 
 function printCartProducts(selector) {
   const cartProducts = JSON.parse(localStorage.getItem("cart")) || [];
-  console.log(cartProducts);
+  const emptyCart = `<div class="empty-cart">
+  <h2>Carrito vacío</h2>
+  <a class="btn-primary" href="index.html">Ir al Inicio</a>
+  </div>`;
   let templateProducts = "";
 
   cartProducts.forEach((productCart) => {
@@ -72,6 +80,6 @@ function printCartProducts(selector) {
 
   const cartContainer = document.getElementById(selector);
   const total = totalToPay(cartProducts);
-  cartContainer.innerHTML = templateProducts;
+  cartContainer.innerHTML = templateProducts || emptyCart;
   cartContainer.innerHTML += total;
 }
