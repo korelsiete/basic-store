@@ -6,12 +6,22 @@
     const navMain = document.getElementById("main-nav");
     const navDropdown = document.getElementById("dropdown-nav");
     const footer = document.getElementById("footer");
+    const userIcon = document.getElementById("user");
 
     localStorage.getItem("cart") ||
       localStorage.setItem("cart", JSON.stringify([]));
     localStorage.getItem("favorites") ||
       localStorage.setItem("favorites", JSON.stringify([]));
+    localStorage.getItem("isOnline") ||
+      localStorage.setItem("isOnline", "false");
 
+    userIcon.addEventListener("click", () => {
+      const isOnline = JSON.parse(localStorage.getItem("isOnline"));
+      localStorage.setItem("isOnline", JSON.stringify(!isOnline));
+      renderIcons();
+    });
+
+    renderIcons();
     renderNavOptions(navMain);
     renderNavOptions(navDropdown);
     renderFooterOptions(footer);
@@ -39,3 +49,20 @@
     }
   });
 })();
+
+function renderIcons() {
+  const isOnline = localStorage.getItem("isOnline") === "true";
+  const userIcon = document.getElementById("user");
+  const cartIcon = document.getElementById("cart");
+  const favoritesIcon = document.getElementById("favorites");
+
+  if (isOnline) {
+    userIcon.classList.remove("login");
+    cartIcon.classList.remove("hide");
+    favoritesIcon.classList.remove("hide");
+  } else {
+    userIcon.classList.add("login");
+    cartIcon.classList.add("hide");
+    favoritesIcon.classList.add("hide");
+  }
+}

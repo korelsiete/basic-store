@@ -147,6 +147,18 @@ header .container {
   width: 32px;
   height: 32px;
 }
+.social ul li #user {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/user-check.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.social ul li #user.login {
+  background-image: url("../assets/user.png");
+}
 .social ul li img {
   width: 100%;
   height: 100%;
@@ -169,6 +181,9 @@ header .container {
 }
 .nav ul li a:hover {
   text-decoration: underline;
+}
+.hide {
+  display: none;
 }
 
 /* dropdown menu */
