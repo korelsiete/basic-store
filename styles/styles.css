@@ -46,6 +46,9 @@ footer {
 /* buttons */
 
 .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background: #ff3b3c;
   color: white;
@@ -55,6 +58,7 @@ footer {
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  text-align: center;
 }
 .btn-primary:hover {
   transition: all 0.3s ease;
@@ -138,11 +142,18 @@ header .container {
   width: 100%;
   height: 100%;
 }
-.social ul li {
+.social ul li a {
+  display: block;
   width: 32px;
   height: 32px;
 }
 .social ul li img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.social ul li svg {
+  fill: white;
   width: 100%;
   height: 100%;
   cursor: pointer;

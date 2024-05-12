@@ -42,8 +42,28 @@ h1 {
   width: 100%;
   max-width: 400px;
 }
+#cart-product .title {
+  display: flex;
+  align-items: center;
+}
+#cart-product .title figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+}
+#cart-product .title figure .star {
+  fill: #aaa;
+  width: 75%;
+  height: 75%;
+  cursor: pointer;
+}
+#cart-product .title figure .star.favorite {
+  fill: #ffe921;
+}
 .cart-product-info h3 {
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -114,9 +134,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  text-align: center;
 }
-
 @media screen and (max-width: 900px) {
   h1 {
     margin-top: 100px;
